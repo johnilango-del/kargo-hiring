@@ -119,4 +119,4 @@ RED FLAGS (do not score; list them in the brief for the human reviewer)
 - Claims with no specifics (no numbers, no named outcome) repeated across the CV
 
 Every result is a recommendation for Arjun to review. The system ranks and explains.
-It never rejects a candidate on its own.
+It never rejects a candidate on its own. 
