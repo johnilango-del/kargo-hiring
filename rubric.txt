@@ -1,0 +1,122 @@
+KARGO HIRING RUBRIC: PRODUCT MANAGER (PM) AND SENIOR PRODUCT MANAGER (SPM)
+
+Source: patterns in Arjun Mehta's 5 past hires rated "Exceeds Expectations" (Rohan Desai, Sunita
+Krishnamurthy, Aditya Shetty, Meghna Tiwari, Lavanya Iyer), checked against his 3 weaker hires
+(Vikram Nair and Rahul Bose: Meets; Preetham Rao: Below). Not the job descriptions.
+The JDs are used only for role level: PM = 2-4 yrs product experience, SPM = 5-8 yrs.
+
+HOW TO SCORE
+- Score every candidate against BOTH rubrics (PM and SPM).
+- Score each criterion 0-5 using only evidence written in the CV. No evidence = 0. Do not infer.
+- Criterion points = (score / 5) x weight. Total = sum of criterion points, out of 100.
+- Give a one-line reason per criterion that quotes or points to the specific CV evidence.
+- Pedigree is NOT a criterion: college names, MBA brand, certifications, conference talks,
+  PRD templates and frameworks earn 0 points on their own. (Past hire Vikram Nair had the
+  strongest pedigree and showed none of the patterns below.)
+
+SCORE ANCHORS (apply to every criterion)
+5 = Strong, specific, repeated evidence with numbers or named outcomes
+3 = Clear evidence, but once, partial, or in an adjacent context
+1 = Weak or indirect evidence (claimed, not shown)
+0 = No evidence
+
+==================================================================
+PM RUBRIC (weights total 100)
+==================================================================
+
+1. GROUND-FLOOR OPERATIONS EXPERIENCE (25)
+   Worked hands-on inside logistics operations (freight forwarder, CHA, port, 3PL, warehouse)
+   before or alongside product work. Hands-on ops in an adjacent physical domain (plant floor,
+   fulfilment, hospital ops) scores up to 3. Consulting, advising or building FOR ops from a
+   desk scores at most 1.
+   Behind it: Rohan Desai (family CHA, JNPT), Sunita Krishnamurthy (freight documentation),
+   Aditya Shetty (JNPT port services), Meghna Tiwari (freight forwarder), Lavanya Iyer
+   (Mahindra Logistics). 5 of 8 hires.
+
+2. BUILDS UNASKED FIXES THAT OTHERS ADOPT (20)
+   Noticed a gap nobody assigned, built a fix (tool, tracker, process, checklist), and other
+   people or teams adopted it as the standard.
+   Behind it: Rohan Desai (Excel tracker adopted by 12-person team in 2 weeks; weekend
+   prototype used by 30 colleagues), Sunita (weekend workflow redesign kept permanently),
+   Lavanya (dashboard adopted by 2 other regions), Meghna (onboarding framework now team-wide).
+
+3. OWNS DECISIONS WITHOUT A LAYER ABOVE (20)
+   Sole PM, first PM, or no PM manager above; made product calls directly rather than
+   through committees, sign-off chains or a PM lead. One module inside a large PM org
+   scores at most 2.
+   Behind it: Lavanya ("sole PM"; "makes calls we trusted immediately. She doesn't hedge"),
+   Sunita ("limited oversight"; owns processes start to finish), Aditya Shetty (runs the full
+   sales cycle independently, no account manager layer).
+
+4. KILLS WHAT DOESN'T WORK AND OWNS FAILURES (20)
+   Killed or retired features based on usage data, especially their own ideas; writes
+   post-mortems; openly documents what went wrong. Short cycles score higher.
+   Behind it: Lavanya (killed 2 features despite strong qualitative demand; wrote the outage
+   post-mortem herself), Aditya Shetty (post-mortem on a lost deal, now standard practice).
+
+5. DISCOVERY IN THE FIELD, NOT FROM A DESK (15)
+   Spent real time embedded with users where the work happens (site visits, weeks on the
+   floor, sitting with ops teams). Discovery only via account managers, workshops, analytics
+   or calls scores at most 2.
+   Behind it: Rohan Desai (works directly with freight ops teams, no product layer),
+   Aditya Shetty (worked alongside terminal ops at peak), Lavanya (parallel discovery tracks
+   with forwarders that uncovered a workflow mismatch).
+
+==================================================================
+SPM RUBRIC (weights total 100)
+==================================================================
+
+1. OWNS CONSEQUENTIAL CALLS WITH NO COMMITTEE (25)
+   Owned a product area or function with no senior PM layer above; made hard, long-term
+   calls (architecture, build vs buy, what not to build) and lived with them. Decisions
+   reviewed by HQ, governance committees or client sign-off score at most 1.
+   Behind it: Lavanya ("doesn't hedge"), Aditya Shetty (runs the full cycle independently),
+   Sunita (owns end to end with limited oversight), Rohan Desai ("most senior engineer in
+   the room"; translates field needs into spec with no product layer).
+
+2. GROUND-FLOOR OPERATIONS EXPERIENCE (20)
+   Same definition as PM criterion 1.
+   Behind it: Rohan Desai, Sunita, Aditya Shetty, Meghna, Lavanya.
+
+3. KILLS OWN IDEAS AND OWNS FAILURES (20)
+   Same definition as PM criterion 4. Extra credit for killing their own idea or absorbing
+   sunk cost to make the call.
+   Behind it: Lavanya, Aditya Shetty.
+
+4. SETS STANDARDS OTHERS ADOPT (20)
+   Built practices, processes or tools that became the team's or company's standard;
+   raised others (mentored people who were promoted, created discovery or review practices).
+   Behind it: Rohan Desai (introduced code review and on-call; cut P1 incidents 40%;
+   mentee promoted in 14 months), Meghna (30-60-90 framework adopted by whole CS team),
+   Sunita (SOPs adopted in full; trainee promoted to team lead), Aditya (loss post-mortem
+   became standard practice).
+
+5. INTEGRATION AND DATA DEPTH FROM REAL USE (15)
+   Shipped integrations or data-layer work (carrier systems, customs/port portals, ERPs,
+   freight tools) informed by knowing what the data really contains in practice.
+   Behind it: Rohan Desai (BoL verification module; legacy data vendor migration with no
+   data loss), Sunita (led paper-to-cloud FMS migration), Lavanya (first API documentation;
+   cut integration time by 2 weeks). Note: Preetham Rao (Below Expectations) also built
+   integrations, but only from inside a large team with no field exposure. Technical
+   skill without ground-floor context does not score above 2.
+
+==================================================================
+WHY THE WEAKER HIRES DID NOT SCORE (calibration)
+==================================================================
+- Vikram Nair (PM, Meets): strongest pedigree (XLRI MBA, CPO cert, talks, PRD templates);
+  no ground-floor ops, one module in a 4-person PM team, no kills, no field discovery.
+- Rahul Bose (Marketing, Meets): real ownership (no CMO above) but no operations
+  exposure. Ownership alone is not enough.
+- Preetham Rao (Engineer, Below): strong technical record, but one of 12 engineers at a
+  3,200-person company; no ground-floor context, nothing built unasked that others adopted.
+
+==================================================================
+RED FLAGS (do not score; list them in the brief for the human reviewer)
+==================================================================
+- Years of product experience outside the role range (PM 2-4, SPM 5-8)
+- Two CVs with near-identical text under different names
+- Contact links or URLs that do not match the candidate's name
+- Claims with no specifics (no numbers, no named outcome) repeated across the CV
+
+Every result is a recommendation for Arjun to review. The system ranks and explains.
+It never rejects a candidate on its own.

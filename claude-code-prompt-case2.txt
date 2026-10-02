@@ -1,0 +1,43 @@
+I'm building a hiring dashboard for Arjun, founder of Kargo (a logistics SaaS startup). He is hiring a Product Manager (PM) and a Senior Product Manager (SPM). The file rubric.txt in this folder is the scoring rubric for both roles. Build the complete project - database, all pages, all scoring and brief and email draft logic, email sending via Resend.
+
+THE CORE RULE
+The system ranks and explains. Arjun decides. No email is ever sent automatically. An email is only sent when Arjun clicks Confirm on that specific candidate.
+
+STACK
+- Next.js (App Router) deployed on Vercel. Node is NOT installed on my Mac, so I can't run anything locally. Keep dependencies minimal, make sure it builds cleanly on Vercel, and tell me if anything needs to be checked after deploy.
+- Supabase for the database (use @supabase/supabase-js on the server only, with the secret key).
+- Gemini API, model gemini-3.5-flash, for all AI steps (call the REST API with fetch, header x-goog-api-key).
+- Resend for email (call the REST API with fetch).
+- Environment variables (read from process.env, never hardcoded, never sent to the browser):
+  SUPABASE_URL, SUPABASE_SECRET_KEY, GEMINI_API_KEY, RESEND_API_KEY, EMAIL_TEST_RECIPIENT
+- Create .env.local with empty placeholders, a .env.example, and a .agitignore that includes .env.local, .env, node_modules and .next.
+
+DATABASE
+Create a file supabase/schema.sql that I will paste into the Supabase SQL Editor myself. Tables:
+- rubric: stores the full text of rubric.txt (seed it from the file on first run, or include it as an insert in schema.sql).
+- candidates: id, created_at, applied_role (PM or SPM), file_name, personal_details (json: name, email, phone, links), cv_content (text with ALL personal details removed), pm_score, spm_score, pm_breakdown (json), spm_breakdown (json), red_flags (json), brief (text), probe_questions (json), invite_email (text), rejection_email (text), email_status (pending / sent), email_type_sent, sent_at.
+
+PIPELINE (runs once per uploaded CV)
+1. Extract text from the PDF on the server.
+2. Extraction call to Gemini: return JSON with personal_details (name, email, phone, links) and cv_content = the CV text with name, email, phone and links removed. Store personal_details in Supabase. After this step, NO AI call ever receives the name, email, phone or links - only cv_content. This is a privacy requirement.
+3. Scoring call: send cv_content plus the rubric. Score the candidate on BOTH the PM rubric and the SPM rubric exactly as rubric.txt instructs (0-5 per criterion, weighted to a total out of 100, one-line evidence-based reason per criterion, red flags listed but never used to reject). Return strict JSON.
+4. Brief and emails call: using cv_content and the scores, generate:
+   - a 3-sentence brief: who they are, why they ranked where they did
+   - 2-3 questions Arjun should probe in an interview
+   - a warm, specific interview invite email
+   - a respectful, specific rejection email that thanks them and does not sound automated
+   Write emails with the placeholder [NAME]. When sending, replace [NAME] with the candidate's real first name from personal_details.
+Keep each request under Vercel's time limit: process one CV per request, and set maxDuration to 60 on the API route. Return clear errors instead of crashing.
+
+PAGES
+1. Upload page: choose role (PM or SPM), select one or many PDF files. The browser uploads them ONE AT A TIME to the API (not all at once) and shows progress per file (processing / done / error).
+2. Dashboard: two tabs, PM and SPM. Each tab lists candidates who applied for that role, ranked by that role's score. The top 5 are marked "Shortlist"; everyone else is "Not moving forward". Show name, score, red flags (if any), and the brief. Click a candidate to see the full breakdown, probe questions, and the draft email.
+3. Candidate view: shows the invite draft for shortlisted candidates and the rejection draft for everyone else. Arjun can switch which email to send, edit the text, and click Confirm. Confirm sends the email via Resend, then updates email_status to sent with a timestamp. A sent email cannot be sent twice.
+
+EMAIL SENDING (test mode)
+Send every email to EMAIL_TEST_RECIPIENT instead of the candidate's real address. Put the candidate's real email in the subject line, e.g. "[To: candidate@email.com] Your application at Kargo". Use "Kargo Hiring <onboarding@resend.dev>" as the sender.
+
+DESIGN
+Clean, professional, minimal: white background, one accent colour, readable tables, works on a laptop screen. The scores and the Confirm button should be the most visible things on each page.
+
+When you're done, list every file with a one-line explanation, then give me numbered next steps in plain English (I'm not technical): what to paste into Supabase, which environment variables to add in Vercel, and how to test.
